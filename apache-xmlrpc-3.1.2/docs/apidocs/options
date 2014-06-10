@@ -1,0 +1,22 @@
+-classpath
+'/home/jwi/workspace/xmlrpc/target/checkout/target/classes:/home/jwi/workspace/xmlrpc/target/checkout/common/target/classes:/home/jwi/workspace/xmlrpc/target/checkout/client/target/classes:/home/jwi/workspace/xmlrpc/target/checkout/server/target/classes:/home/jwi/workspace/xmlrpc/target/checkout/dist/target/classes:/home/jwi/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar:/home/jwi/.m2/repository/org/apache/xmlrpc/xmlrpc-common/3.1.2/xmlrpc-common-3.1.2.jar:/home/jwi/.m2/repository/org/apache/xmlrpc/xmlrpc-server/3.1.2/xmlrpc-server-3.1.2.jar:/home/jwi/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/home/jwi/.m2/repository/org/apache/xmlrpc/xmlrpc-client/3.1.2/xmlrpc-client-3.1.2.jar:/home/jwi/.m2/repository/commons-logging/commons-logging/1.1/commons-logging-1.1.jar:/home/jwi/.m2/repository/jaxme/jaxmeapi/0.5.1/jaxmeapi-0.5.1.jar:/home/jwi/.m2/repository/javax/servlet/servlet-api/2.4/servlet-api-2.4.jar:/home/jwi/.m2/repository/org/apache/ws/commons/util/ws-commons-util/1.0.2/ws-commons-util-1.0.2.jar:/home/jwi/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/home/jwi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/jwi/workspace/xmlrpc/target/checkout/common/src/main/java:/home/jwi/workspace/xmlrpc/target/checkout/client/src/main/java:/home/jwi/workspace/xmlrpc/target/checkout/server/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2001-2009 <a href="http://www.apache.org/">The Apache Software Foundation</a>. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/home/jwi/workspace/xmlrpc/target/checkout/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Apache XML-RPC 3.1.2 API'
+-use
+-version
+-windowtitle
+'Apache XML-RPC 3.1.2 API'
