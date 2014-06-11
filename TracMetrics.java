@@ -63,7 +63,7 @@ public class TracMetrics extends TimerTask {
 		}
 	}
 	
-	private final int SNAPSHOT_WRITE = 6;
+	private final int SNAPSHOT_WRITE = 24;
 	private ArrayList<Snapshot> prevSnapshots = null;
 	private Snapshot currSnapshot = null;
 
@@ -71,8 +71,11 @@ public class TracMetrics extends TimerTask {
         TimerTask timerTask = new TracMetrics();
         // running timer task as daemon thread
         Timer timer = new Timer();
-        // schedule task to be run every 10 minutes
-        timer.scheduleAtFixedRate(timerTask, 0, 10*60*1000);
+        // schedule task to be run every 10 minutes. No handling of overflow past midnight.
+        Date d = new Date();
+        @SuppressWarnings("deprecation")
+        Date tH = new Date(d.getYear(), d.getMonth(), d.getDate(), d.getHours()+1, 0, 0);
+        timer.scheduleAtFixedRate(timerTask, tH, 10*60*1000);
     }
     
     public void run() {
@@ -156,6 +159,10 @@ public class TracMetrics extends TimerTask {
     			Ticket cT = tm.get(pT.getIdTicket());
     			String status = cT.getStatus();
 				OwnerData od = currSnapshot.ownerDataMap.get(pT.getOwner());
+				if( od == null ) {
+    		    	od = new OwnerData(pT.getOwner());
+    		    	currSnapshot.ownerDataMap.put(pT.getOwner(), od);
+				}
     			if( status.equals("verifying") || status.equals("closed") )
     				od.numClosed++;
     			else
@@ -244,6 +251,7 @@ public class TracMetrics extends TimerTask {
     
     private void writeOwnerData() {
     	// write to a file
+    	/*
     	String fileName = "cedarbugs" + String.valueOf(currSnapshot.date.getYear()+1900) + String.valueOf(currSnapshot.date.getMonth()+1) 
     			+ String.valueOf(currSnapshot.date.getDate()) + String.valueOf(currSnapshot.date.getHours()) + ".csv";
     	Writer writer = null;
@@ -262,6 +270,7 @@ public class TracMetrics extends TimerTask {
     	} finally {
     	   try {writer.close();} catch (Exception ex) {}
     	}
+	*/
     	
     	// write to gemfire XD
     	try {
